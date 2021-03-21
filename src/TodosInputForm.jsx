@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { createUseStyles } from "react-jss";
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = createUseStyles({
 todosInputForm: {
-    width: '300px',
     display: 'flex',
     flexDirection: 'column',
 },    
@@ -14,6 +15,10 @@ form: {
 buttons: {
     display: 'flex',
     justifyContent: 'space-between',
+    marginTop: '10px',
+},
+todoUrgency: {
+    marginTop: '10px',
 },
 });
 
@@ -50,8 +55,8 @@ const handleInputChange = (e) => setValue(e.target.value);
         <div className={classes.todosInputForm}>
 {showForm ? (
 <form className={classes.form} onSubmit={handleSubmit}>
-                   <input type="text" value={value} onChange={handleInputChange}/>
-                   <div>
+                   <TextField className={classes.todoName} label="Enter todo" value={value} onChange={handleInputChange}/>
+                   <div className={classes.todoUrgency}>
                        <span>urgency:</span>
                        <label>
                            <input type="radio" value='low' checked={urgency === 'low'} onChange={handleUrgencyChange}/>
@@ -67,8 +72,13 @@ const handleInputChange = (e) => setValue(e.target.value);
                        </label>
                    </div>
                    <div className={classes.buttons}>
-                   <button onClick={toggleForm}>Cancel</button>
-                   <button type='submit'>Add todo</button>
+                   <Button variant="outlined" color="primary" onClick={toggleForm}>
+                   Cancel
+                   </Button>
+                   <Button type='submit' variant="outlined" color="primary" >
+                   Add todo
+                   </Button>
+                   {/* <button type='submit'>Add todo</button> */}
                    </div>
             </form>) : (<button onClick={toggleForm}>+ Add todo</button>)}
         </div>

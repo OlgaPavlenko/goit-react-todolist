@@ -1,8 +1,14 @@
 import { useState } from "react";
 import TodosInputForm from "./TodosInputForm";
 import TodosList from "./TodosList";
+import { createUseStyles } from "react-jss";
 
 
+const useStyles = createUseStyles({
+    container: {
+        width: '300px'
+    }
+});
 const TodosPage = () => {  
 const [todos, setTodos] = useState([]);
 
@@ -18,9 +24,9 @@ const handleToggleTodo = (id) => {
         isDone: !todo.isDone
     } : todo));
 };
-
+const classes = useStyles();
     return (
-        <div>
+        <div className={classes.container}>
         <h1>Todos</h1>
 
         <TodosInputForm onSubmit={handleSubmit}/>
