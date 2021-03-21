@@ -7,7 +7,10 @@ import { createUseStyles } from "react-jss";
 const useStyles = createUseStyles({
     container: {
         width: '300px'
-    }
+    },
+    header: {
+color: 'darkBlue',
+    },
 });
 const TodosPage = () => {  
 const [todos, setTodos] = useState([]);
@@ -27,7 +30,7 @@ const handleToggleTodo = (id) => {
 const classes = useStyles();
     return (
         <div className={classes.container}>
-        <h1>Todos</h1>
+        <h1 className={classes.header}>Todos</h1>
 
         <TodosInputForm onSubmit={handleSubmit}/>
         <TodosList todos={todos} onDelete={handleDeleteTodo} onToggle={handleToggleTodo}/>

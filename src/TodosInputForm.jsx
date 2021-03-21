@@ -80,9 +80,12 @@ const handleInputChange = (e) => setValue(e.target.value);
                    </Button>
                    {/* <button type='submit'>Add todo</button> */}
                    </div>
-            </form>) : (<button onClick={toggleForm}>+ Add todo</button>)}
+            </form>) : (<Button variant="outlined" color="primary" onClick={toggleForm}>
++ Add todo
+                   </Button>)}
         </div>
     )
 };
 
 export default TodosInputForm;
+
