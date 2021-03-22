@@ -3,7 +3,6 @@ import TodosInputForm from "./TodosInputForm";
 import TodosList from "./TodosList";
 import { createUseStyles } from "react-jss";
 
-
 const useStyles = createUseStyles({
     container: {
         width: '300px'

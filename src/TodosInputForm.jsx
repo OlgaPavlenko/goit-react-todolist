@@ -50,39 +50,36 @@ setShowForm(false);
 const handleUrgencyChange = (e) => setUrgency(e.target.value);
 const handleInputChange = (e) => setValue(e.target.value);
 
-
     return (
         <div className={classes.todosInputForm}>
 {showForm ? (
 <form className={classes.form} onSubmit={handleSubmit}>
-                   <TextField className={classes.todoName} label="Enter todo" value={value} onChange={handleInputChange}/>
-                   <div className={classes.todoUrgency}>
-                       <span>urgency:</span>
-                       <label>
-                           <input type="radio" value='low' checked={urgency === 'low'} onChange={handleUrgencyChange}/>
-                           <span>low</span>
-                       </label>
-                       <label>
-                           <input type="radio" value='medium' checked={urgency === 'medium'} onChange={handleUrgencyChange}/>
-                           <span>medium</span>
-                       </label>
-                       <label>
-                           <input type="radio" value='high' checked={urgency === 'high'} onChange={handleUrgencyChange}/>
-                           <span>high</span>
-                       </label>
-                   </div>
-                   <div className={classes.buttons}>
-                   <Button variant="outlined" color="primary" onClick={toggleForm}>
+    <TextField className={classes.todoName} label="Enter todo" value={value} onChange={handleInputChange}/>
+        <div className={classes.todoUrgency}>
+            <span>urgency:</span>
+                <label>
+                    <input type="radio" value='low' checked={urgency === 'low'} onChange={handleUrgencyChange}/>
+                    <span>low</span>
+                </label>
+                <label>
+                    <input type="radio" value='medium' checked={urgency === 'medium'} onChange={handleUrgencyChange}/>
+                    <span>medium</span>
+                </label>
+                <label>
+                    <input type="radio" value='high' checked={urgency === 'high'} onChange={handleUrgencyChange}/>
+                    <span>high</span>
+                </label>
+        </div>
+            <div className={classes.buttons}>
+                <Button variant="outlined" color="primary" onClick={toggleForm}>
                    Cancel
-                   </Button>
-                   <Button type='submit' variant="outlined" color="primary" >
+                </Button>
+                <Button type='submit' variant="outlined" color="primary" >
                    Add todo
-                   </Button>
-                   {/* <button type='submit'>Add todo</button> */}
-                   </div>
+                </Button>
+            </div>
             </form>) : (<Button variant="outlined" color="primary" onClick={toggleForm}>
-+ Add todo
-                   </Button>)}
++ Add todo</Button>)}
         </div>
     )
 };

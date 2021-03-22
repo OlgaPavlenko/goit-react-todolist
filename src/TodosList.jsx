@@ -10,5 +10,4 @@ const TodosList = ({ todos, onDelete, onToggle }) => {
     )
 };
 
-
 export default TodosList;
